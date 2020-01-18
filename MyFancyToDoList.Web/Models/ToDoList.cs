@@ -11,9 +11,8 @@ namespace MyFancyToDoList.Web.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public DateTime DueDate { get; set; }
-
-
-
+        public bool IsCompleted { get; set; }
+        public bool IsReOccuring { get; set; }
     }
 
     public class ToDoListDbContext : DbContext
