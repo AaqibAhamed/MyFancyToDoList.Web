@@ -122,6 +122,12 @@ namespace MyFancyToDoList.Web.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult Completed()
+        {
+            return View(db.ToDoLists.ToList()); //Return the created lists 
+        }
+
+
 
 
     }
