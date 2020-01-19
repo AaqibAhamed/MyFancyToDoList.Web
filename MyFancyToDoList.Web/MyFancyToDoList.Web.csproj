@@ -132,6 +132,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001181243060_InitialCreate.cs" />
+    <Compile Include="Migrations\202001181243060_InitialCreate.designer.cs">
+      <DependentUpon>202001181243060_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001190208506_firstChange.cs" />
+    <Compile Include="Migrations\202001190208506_firstChange.designer.cs">
+      <DependentUpon>202001190208506_firstChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ToDoList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -192,6 +201,14 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202001181243060_InitialCreate.resx">
+      <DependentUpon>202001181243060_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001190208506_firstChange.resx">
+      <DependentUpon>202001190208506_firstChange.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
