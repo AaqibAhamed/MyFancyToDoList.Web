@@ -1,13 +1,17 @@
 ﻿@model IEnumerable<MyFancyToDoList.Web.Models.ToDoList>
 
 @{
-    ViewBag.Title = "My ToDoList";
+    ViewBag.Title = "My Fancy ToDoList";
 }
 
-<h2>Index</h2>
+<h2>My Fancy ToDo List</h2>
+<h3>Active ToDo [@Model.Count()]</h3>
+
+
+
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add New Todo Item", "Create")
 </p>
 <table class="table">
     <tr>
@@ -17,23 +21,29 @@
         <th>
             @Html.DisplayNameFor(model => model.DueDate)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsReOccuring)
+        </th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DueDate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DueDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IsReOccuring)
+    </td>
+
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    </td>
+</tr>
 }
 
 </table>

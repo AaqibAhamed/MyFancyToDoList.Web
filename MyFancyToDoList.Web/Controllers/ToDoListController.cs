@@ -31,7 +31,7 @@ namespace MyFancyToDoList.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,DueDate")] ToDoList toDoList)
+        public ActionResult Create([Bind(Include = "Id,Name,DueDate,IsReOccuring")] ToDoList toDoList)
         {
             if(ModelState.IsValid)
             {
@@ -48,7 +48,7 @@ namespace MyFancyToDoList.Web.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);//not exist
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);//if not exist
             }
             ToDoList toDoList = db.ToDoLists.Find(id);
 
@@ -77,7 +77,7 @@ namespace MyFancyToDoList.Web.Controllers
         // POST: ToDoList/Edit/
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,DueDate")] ToDoList toDoList)
+        public ActionResult Edit([Bind(Include = "Id,Name,DueDate,IsReOccuring")] ToDoList toDoList)
         {
             if (ModelState.IsValid)
             {
@@ -116,7 +116,7 @@ namespace MyFancyToDoList.Web.Controllers
 
         protected override void Dispose(bool disposing) 
         {
-            if (disposing)
+            if (disposing)       //	 Releases all resources that are used by the current instance of the Controller class.
             {
                 db.Dispose();
             }
