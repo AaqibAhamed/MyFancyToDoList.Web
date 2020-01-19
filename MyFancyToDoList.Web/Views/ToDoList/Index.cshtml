@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<MyFancyToDoList.Web.Models.ToDoList>
 
 @{
-    ViewBag.Title = "My Fancy ToDoList";
+    ViewBag.Title = "My Fancy To DoList";
 }
 
 <h2>My Fancy ToDo List</h2>
@@ -13,8 +13,16 @@
 <p>
     @Html.ActionLink("Add New Todo Item", "Create")
 </p>
+<p>
+    @Html.ActionLink("Completed Task","Completed")
+</p>
 <table class="table">
     <tr>
+
+        @*<th>
+            @Html.DisplayNameFor(model => model.IsCompleted)
+        </th>*@
+
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
@@ -26,8 +34,13 @@
         </th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model) 
+{
 <tr>
+    @*<td>
+        @Html.DisplayFor(modelItem => item.IsCompleted)
+    </td>*@
+
     <td>
         @Html.DisplayFor(modelItem => item.Name)
     </td>

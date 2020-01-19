@@ -12,6 +12,8 @@ namespace MyFancyToDoList.Web.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public DateTime DueDate { get; set; }
+
+        [Display(Name ="Status")]
         public bool IsCompleted { get; set; }
 
         [Display(Name = " Repeating Task ") ]
