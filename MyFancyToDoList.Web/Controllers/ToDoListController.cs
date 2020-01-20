@@ -19,6 +19,17 @@ namespace MyFancyToDoList.Web.Controllers
         {
             return View(db.ToDoLists.ToList()); //Return the created lists 
         }
+        public ActionResult TodayTask()
+        {
+            return View(db.ToDoLists.ToList());
+            //have to implement 
+        }
+
+        public ActionResult WeekTask()
+        {
+            return View(db.ToDoLists.ToList());
+            //have to implement 
+        }
 
         // GET: ToDoList/Create
         public ActionResult Create()
@@ -124,7 +135,7 @@ namespace MyFancyToDoList.Web.Controllers
         }
         public ActionResult Completed()
         {
-            return View(db.ToDoLists.ToList()); //Return the created lists 
+            return View(db.ToDoLists.ToList()); //Have to implement
         }
 
 

@@ -1,27 +1,29 @@
 ﻿@model IEnumerable<MyFancyToDoList.Web.Models.ToDoList>
 
 @{
-    ViewBag.Title = "My Fancy To DoList";
+    ViewBag.Title = "My Fancy To Do List";
 }
 
-<h2>My Fancy ToDo List</h2>
-<h3>Active ToDo [@Model.Count()]</h3>
+<h2>My Fancy To Do List</h2>
+<h3> @Html.ActionLink("Add New Todo Item", "Create")</h3>
+
+<p>@Html.ActionLink("Active To Do", "TodayTask")  [@Model.Count()]</p>
+<p> @Html.ActionLink("Tasks of the Day", "TodayTask") [@Model.Where(t => t.DueDate == DateTime.Today).Count()]</p>
+<p>@Html.ActionLink("Task for the Week", "WeekTask") [@Model.Where(t => t.DueDate <= DateTime.Today.AddDays(7)).Count()]</p>
 
 
 
 
-<p>
-    @Html.ActionLink("Add New Todo Item", "Create")
-</p>
+
 <p>
     @Html.ActionLink("Completed Task","Completed")
 </p>
 <table class="table">
     <tr>
 
-        @*<th>
+        <th>
             @Html.DisplayNameFor(model => model.IsCompleted)
-        </th>*@
+        </th>
 
         <th>
             @Html.DisplayNameFor(model => model.Name)
@@ -37,9 +39,9 @@
 @foreach (var item in Model) 
 {
 <tr>
-    @*<td>
+    <td>
         @Html.DisplayFor(modelItem => item.IsCompleted)
-    </td>*@
+    </td>
 
     <td>
         @Html.DisplayFor(modelItem => item.Name)

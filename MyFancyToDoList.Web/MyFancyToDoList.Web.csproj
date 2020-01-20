@@ -187,6 +187,8 @@
     <Content Include="Views\ToDoList\Edit.cshtml" />
     <Content Include="Views\ToDoList\Delete.cshtml" />
     <Content Include="Views\ToDoList\Completed.cshtml" />
+    <Content Include="Views\ToDoList\TodayTask.cshtml" />
+    <Content Include="Views\ToDoList\WeekTask.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
